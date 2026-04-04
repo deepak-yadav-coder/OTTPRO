@@ -85,7 +85,7 @@ const styles = {
         background: 'white',
         borderRadius: "5px",
         padding: "5px",
-        margin: '20px',
+        margin: '20px 20px 100px 20px',
         width: window.screen.width < 500 ? '90%' : 'auto'
     },
     label: {
