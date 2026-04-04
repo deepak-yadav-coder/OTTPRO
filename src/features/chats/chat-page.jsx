@@ -4,27 +4,29 @@ import profileIcon from "../../assets/icons/favicon.ico";
 const Chat = () => {
 
     const [message, setMessage] = useState('');
-    const [updateUi, setUi] = useState('');
 
+    let oldMsg = localStorage.getItem('message') || '[]';
+    oldMsg = JSON.parse(oldMsg)
     function handleMessage() {
-        console.log(message);
-        if (message) { setMessage(message) }
+        if (message) {
+            oldMsg.push(message);
+        }
 
-        localStorage.setItem('message', message)
-        setUi(message)
+        localStorage.setItem('message', JSON.stringify(oldMsg));
         setMessage('');
-
     }
+
     function handleKeyDown(e) {
         if (e.key == 'Enter') {
             handleMessage()
         }
     }
-    // get = localStorage.getItem('message')
+
     function handleOnChange(e) {
         { setMessage(e.target.value) }
 
     }
+    console.log(oldMsg)
     return (
         <div style={styles.chatContainer}>
 
@@ -47,9 +49,11 @@ const Chat = () => {
                 </div>
 
                 {/* Right message */}
-                <div style={styles.messageRight}>
-                    {updateUi}😎
-                </div>
+                {oldMsg.map((value, idx) => (
+                    <div key={idx} style={styles.messageRight}>
+                        {value}😎
+                    </div>
+                ))}
 
             </div>
 

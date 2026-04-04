@@ -19,7 +19,7 @@ const Cards = ({ value = [], align = "left" }) => {
 
         if (!isExists && Title) {
 
-            prevActivity = [...prevActivity, value];
+            prevActivity = [value,...prevActivity];
             localStorage.setItem('recentWatched', JSON.stringify(prevActivity))
         }
     }

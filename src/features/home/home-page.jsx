@@ -29,6 +29,7 @@ const styles = {
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "flex-start",
+    paddingTop: '40px'
   }
 }
 
