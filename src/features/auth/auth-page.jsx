@@ -1,8 +1,10 @@
 import { useFormik } from "formik";
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 const AuthPage = ({ setIsLoggedIn, setUserData }) => {
 
+    const navigateDefault = useNavigate();
     const userObject = {
         name: "",
         mobile: "",
@@ -15,6 +17,7 @@ const AuthPage = ({ setIsLoggedIn, setUserData }) => {
             localStorage.setItem('isLoggedIn', true);
             setIsLoggedIn(true);
             setUserData(values);
+            navigateDefault("/", { replace: true });
             // const apiResponse = axios.post('http://localhost:5000/signup', values)
             // console.log(apiResponse)
             handleReset();

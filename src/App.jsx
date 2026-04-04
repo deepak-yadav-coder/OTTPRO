@@ -37,10 +37,9 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            {/* <Route path="/" element={<AuthPage setIsLoggedIn={setIsLoggedIn} setUserData={setUserData} />} /> */}
+            <Route path="/*" element={<AuthPage setIsLoggedIn={setIsLoggedIn} setUserData={setUserData} />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/*" element={<AuthPage setIsLoggedIn={setIsLoggedIn} setUserData={setUserData} />} />
           </Routes>
         </>
       ) : (
@@ -52,18 +51,18 @@ function App() {
             style={{ paddingBottom: "70px" }}
           >
             <Routes>
+
+              <Route path="/" element={<HomePage />} />
+              <Route path="/video" element={<VideoPage />} />
+              <Route path="/chat" element={<ChatNavigate />} />
+
               <Route path="/profile" element={<Profile />} />
               <Route path="/settings" element={<Settings />} />
               <Route
                 path="/logout"
                 element={<Logout setIsLoggedIn={setIsLoggedIn} />}
               />
-              <Route path="/" element={<HomePage />} />
-              <Route path="/video" element={<VideoPage />} />
-              <Route path="/chat" element={<ChatNavigate />} />
 
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
             </Routes>
             <BottomNav />
           </div>
