@@ -74,16 +74,19 @@ const styles = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "90vh",
+        height: "100vh",
         background: "#e3dddd",
+        width: '100%',
+        position: 'fixed',
     },
     form: {
-        display: 'grid',
-        width: '33%',
+        display: 'block',
         color: 'black',
         background: 'white',
         borderRadius: "5px",
-        padding: "5px"
+        padding: "5px",
+        margin: '20px',
+        width: window.screen.width < 500 ? '90%' : 'auto'
     },
     label: {
         display: 'flex',
@@ -92,7 +95,7 @@ const styles = {
         fontSize: "16px",
         fontWeight: "60px",
         color: "#050101",
-        margin: '4px',
+        margin: window.screen.width > 500 ? '15px 60px' : 'auto',
         fontFamily: "system-ui, Avenir, Helvetica, Arial, sans-serif"
 
     },
@@ -117,7 +120,7 @@ const styles = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        margin: "10px 180px",
+        margin: "auto",
         padding: "10px",
         borderRadius: "8px",
         border: "none",
