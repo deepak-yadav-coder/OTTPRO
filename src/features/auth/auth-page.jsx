@@ -78,7 +78,7 @@ const styles = {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
-        background: "#e3dddd",
+        background: "#0f172a",
         width: '100%',
         position: 'fixed',
     },
